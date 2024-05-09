@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Rendering</title>
+    <style>
+        img{
+        height: 400px;
+        width: 50%;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your ItemList component code will go here
+        let root = document.getElementById('root')
+        let reactRoot = ReactDOM.createRoot(root)
+
+
+        function Gallery({children }) {
+            return (
+                <>
+                    <h1>{children}</h1>
+                </>
+            );
+
+        }
+
+        function Image({ src }) {
+            return (
+                <img src={src} alt="" />
+            )
+        }
+        function App() {
+            return (
+                <>
+                    <Gallery>
+                        <Image src="https://cdn.pixabay.com/photo/2017/02/07/16/47/kingfisher-2046453_1280.jpg" />
+                        <Image src="https://png.pngtree.com/png-vector/20191121/ourmid/pngtree-blue-bird-vector-or-color-illustration-png-image_2013004.jpg" />
+                    </Gallery>;
+                </>
+            )
+        }
+
+        reactRoot.render(<App />)
+    </script>
+</body>
+
+</html>
