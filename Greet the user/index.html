@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Greeting Component</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
-  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel">
-    // Your Greeting component code will go here
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greeting Component</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  // Your Greeting component code will go here
+  let root = document.getElementById('root')
+
+
+  function Greeting(props) {
+    return (
+      <div>
+        <p>{messege} {name}</p>
+        <h1></h1>
+      </div>
+    )
+  }
+  
+
+
+  const reactRoot = ReactDOM.createRoot(root)
+  const name = "Alice";
+  const messege = "Hello";
+  reactRoot.render(<Greeting  />)
+
+</script>
+
 </html>
+<!-- The Greeting component should accept two props:
+message: a string that represents the greeting message.
+name: a string that represents the name of the person to greet.
+Render a paragraph (<p>) element that combines the message and name to
+   display a greeting. For instance, if message="Hello" and name="Alice", the component
+    should render "Hello, Alice" on the web page. -->
